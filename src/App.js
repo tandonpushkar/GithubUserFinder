@@ -61,7 +61,7 @@ export default class App extends Component {
 
           <Switch>
 
-            <Route exact path='/' render={props => (
+            <Route exact path='/GithubUserFinder' render={props => (
               <Fragment>
                 <Search searchUsers={this.searchUser} AlertError={this.state.Alerterror} />
                 <Users userres={this.state.users} />
@@ -69,9 +69,9 @@ export default class App extends Component {
             )} />
 
 
-            <Route exact path='/about' component={About} />
+            <Route exact path='/GithubUserFinder/about' component={About} />
 
-            <Route exact path='/user/:login' render={props => (
+            <Route exact path='/GithubUserFinder/user/:login' render={props => (
               <User {...props} getUserRepos={this.getUserRepos} repos={this.state.repos} getUser={this.getUser} user={this.state.user} />
             )} />
 

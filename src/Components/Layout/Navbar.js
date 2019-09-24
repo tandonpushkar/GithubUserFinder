@@ -14,8 +14,8 @@ export default class Navbar extends Component {
                 <Pane>
                     {this.props.showClear && (<Tab appearance="primary" onSelect={this.props.clearUser} >Clear</Tab>)}
 
-                    <Link to='/' style={{ textDecoration: 'none' }}><Tab>Home </Tab></Link>
-                    <Link to='/about' style={{ textDecoration: 'none' }}><Tab>About </Tab></Link>
+                    <Link to='/GithubUserFinder' style={{ textDecoration: 'none' }}><Tab>Home </Tab></Link>
+                    <Link to='/GithubUserFinder/about' style={{ textDecoration: 'none' }}><Tab>About </Tab></Link>
 
                 </Pane>
             </Pane >

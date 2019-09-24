@@ -25,7 +25,7 @@ export default class UserItem extends Component {
                 />
 
                 <Strong size={500} marginTop={10}  >{this.props.name}</Strong>
-                <Link to={`/user/${this.props.name}`}><Button marginTop={20} height={20} appearance="primary" iconAfter="arrow-right">Profile</Button> </Link>
+                <Link to={`/GithubUserFinder/user/${this.props.name}`}><Button marginTop={20} height={20} appearance="primary" iconAfter="arrow-right">Profile</Button> </Link>
 
             </Pane>
 
