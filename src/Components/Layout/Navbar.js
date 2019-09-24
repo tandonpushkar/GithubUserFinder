@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Pane, Tab, Button, Text, Heading } from 'evergreen-ui'
+import { Pane, Tab, Heading } from 'evergreen-ui'
 import { Link } from 'react-router-dom';
 
 
