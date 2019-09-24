@@ -11,10 +11,18 @@ import User from './Components/users/User';
 export default class App extends Component {
 
   state = {
+    repos: [],
     users: [],
     user: {},
     loading: false,
     Alerterror: false,
+  }
+
+
+  getUserRepos = async username => {
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+
+    this.setState({ repos: res.data, loading: false });
   }
 
 
@@ -64,7 +72,7 @@ export default class App extends Component {
             <Route exact path='/about' component={About} />
 
             <Route exact path='/user/:login' render={props => (
-              <User {...props} getUser={this.getUser} user={this.state.user} />
+              <User {...props} getUserRepos={this.getUserRepos} repos={this.state.repos} getUser={this.getUser} user={this.state.user} />
             )} />
 
           </Switch>

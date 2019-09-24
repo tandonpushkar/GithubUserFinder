@@ -4,8 +4,10 @@ import { Strong, Heading, Badge, Icon, Pane, Text, Avatar, Button } from 'evergr
 export default class User extends Component {
     componentDidMount() {
         this.props.getUser(this.props.match.params.login)
+        this.props.getUserRepos(this.props.match.params.login)
     }
     render() {
+        let id = 1;
         const {
             hireable,
             login,
@@ -116,10 +118,32 @@ export default class User extends Component {
 
                 </Pane>
 
+                <Pane
+                    elevation={4}
+                    marginTop={25}
+                    float="left"
+                    marginLeft={50}
+                    marginRight={50}
+                    display="flex"
+                    height={200}
+                    justifyContent="space-evenly"
+
+                    flexDirection="column">
+                    <Badge color="red" marginRight={8}>Repositories</Badge>
+                    {this.props.repos.map((r) => (
+                        <Pane>
+                            <a style={{ textDecoration: 'none' }} href={r.html_url} >
+                                <Badge marginLeft={30} color="teal" marginRight={8}>{id++}. {r.name}</Badge></a>
+                        </Pane>
+                    ))}
+
+
+                </Pane>
 
 
 
-            </Pane>
+
+            </Pane >
 
         )
     }
