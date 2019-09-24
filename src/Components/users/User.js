@@ -86,7 +86,9 @@ export default class User extends Component {
                             flexDirection="row">
                             <Pane>
                                 <p /><Button iconAfter="arrow-right">
-                                    <a style={{ textDecoration: 'none' }} href={html_url}>Visit Github Profile</a>
+                                    <a style={{ textDecoration: 'none' }} href={html_url}
+                                        rel="noopener noreferrer" target="_blank">
+                                        Visit Github Profile</a>
                                 </Button>
                                 <p /> Username : {login}
                                 <br />Company : {company ? company : 'Null'}
@@ -132,7 +134,8 @@ export default class User extends Component {
                     <Badge color="red" marginRight={8}>Repositories</Badge>
                     {this.props.repos.map((r) => (
                         <Pane>
-                            <a style={{ textDecoration: 'none' }} href={r.html_url} >
+                            <a style={{ textDecoration: 'none' }} href={r.html_url}
+                                rel="noopener noreferrer" target="_blank" >
                                 <Badge marginLeft={30} color="teal" marginRight={8}>{id++}. {r.name}</Badge></a>
                         </Pane>
                     ))}
